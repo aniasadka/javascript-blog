@@ -6,9 +6,11 @@ document.getElementById('test-button').addEventListener('click', function () {
 */
 
 const titleClickHandler = function (event) {
+    const clickedElement = this;
     console.log('Link was clicked!');
 
-    /* remove class 'active' from all article links  */
+
+    /* [DONE] remove class 'active' from all article links  */
 
     const activeLinks = document.querySelectorAll('.titles a.active');
 
@@ -16,9 +18,13 @@ const titleClickHandler = function (event) {
         activeLink.classList.remove('active');
     }
 
-    /* add class 'active' to the clicked link */
+    /* [IN PROGRESS]add class 'active' to the clicked link */
 
-    /* remove class 'active' from all articles */
+    const activeLink = document.querySelectorAll('.titles');
+    activeLink.classList.add('active');
+    console.log('clickedElement:', clickedElement);
+
+    /* [DONE] remove class 'active' from all articles */
 
     const activeArticles = document.querySelectorAll('.posts article.active');
 
@@ -37,5 +43,5 @@ const links = document.querySelectorAll('.titles a');
 
 for (let link of links) {
     link.addEventListener('click', titleClickHandler);
-    console.log('link')
+
 }
